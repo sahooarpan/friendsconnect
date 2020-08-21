@@ -38,8 +38,9 @@ const App = () => {
     <div>
       <Router>
       <Header/>
+      <Alert/>  
       <div className="content">
-      <Alert/>      
+          
       <Route exact path='/login' component={Login} />
       
       <Route exact path='/register' component={Register} />
