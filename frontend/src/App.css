@@ -207,7 +207,7 @@ p{
 
 .alert-content{
   margin-top:65px;
-  width: 33%;
+  width: 80%;
   text-align: center;
   margin-left: 11rem;
 
@@ -336,7 +336,10 @@ input[type=submit] {
   font-size: 1rem;
 }
 
-
+.nav-link{
+  display: block;
+  padding:0.4rem;
+}
 
 
 .nav-search-input{
