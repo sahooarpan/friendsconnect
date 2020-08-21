@@ -1,12 +1,12 @@
 import React,{ useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,withRouter } from 'react-router-dom'
 import { setAlert } from '../actions/alert'
 import { connect } from 'react-redux'
 import { register } from '../actions/auth'
 import Alert from './layout/Alert'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-const Register = ({setAlert,register,isAuthenticated}) => {
+const Register = ({setAlert,register,isAuthenticated,history}) => {
 
     //const dispatch = useDispatch();
 
@@ -95,6 +95,7 @@ const Register = ({setAlert,register,isAuthenticated}) => {
             setAlert("Passowords do not match",'danger')
         }
         register({name,email,password,confirmPassword,image})
+        history.push('/login')
     }
     if(isAuthenticated){
         return <Redirect to='/dashboard' />
@@ -144,4 +145,4 @@ const mapStateToProps =state=>({
     isAuthenticated:state.auth.isAuthenticated
 })
 
-export default connect(mapStateToProps,{setAlert,register})(Register)
+export default connect(mapStateToProps,{setAlert,register})(withRouter(Register))

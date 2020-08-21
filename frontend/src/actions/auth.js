@@ -40,10 +40,7 @@ export const register =({name,email,password,confirmPassword,image})=>async disp
             type:REGISTER_SUCCESS,
             payload:res.data
         })
-        if(localStorage.token){
-            setAuthToken(localStorage.token);
-          }
-        dispatch(loadUser())
+        
     } catch (err) {
         console.log(err)
         dispatch({
