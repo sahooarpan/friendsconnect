@@ -8,6 +8,6 @@ export const setAlert = (msg,alertType)=>dispatch=>{
         payload:{msg,alertType,id}
     })
     console.log("alert created",id)
-    //setTimeout(()=>dispatch({type:DELETE_ALERT,payload:id}),2500)
+    setTimeout(()=>dispatch({type:DELETE_ALERT,payload:id}),2500)
     console.log("alert deleted",id)
 }
