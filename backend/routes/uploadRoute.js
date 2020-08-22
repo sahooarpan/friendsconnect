@@ -2,8 +2,7 @@ const express = require('express')
 const multer = require('multer')
 const multerS3 = require('multer-s3')
 const aws = require('aws-sdk')
-const config = require('config')
-
+const config = require('../../config')
 const storage = multer.diskStorage({
   destination(req, file, cb) {
     cb(null, 'uploads/');
@@ -23,8 +22,8 @@ router.post('/', upload.single('image'), (req, res) => {
 
 
 aws.config.update({
-  accessKeyId:config.get('accessKeyId'),
-  secretAccessKey:config.get('secretAccessKey')
+  accessKeyId:config.accessKeyId,
+  secretAccessKey:config.secretAccessKey
 })
 
 
