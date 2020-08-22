@@ -23,7 +23,7 @@ const CreatePost = ({auth:{user},createPost,history}) => {
         const bodyFormData = new FormData();
         bodyFormData.append('image',file);
         setUploading(true)
-        axios.post('/api/uploadRoute',bodyFormData,{
+        axios.post('/api/uploadRoute/s3',bodyFormData,{
             headers:{
                 'Content-Type':'multipart/form-data',
             }
