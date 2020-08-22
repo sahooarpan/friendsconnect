@@ -32,6 +32,7 @@ const s3 = new aws.S3();
 const storageS3 = multerS3({
   s3,
   bucket:'friendsconnect',
+  acl: 'public-read',
   contentType:multerS3.AUTO_CONTENT_TYPE,
   key(req,file,cb){
     cb(null,file.originalname)
